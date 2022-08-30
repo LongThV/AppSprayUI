@@ -7,7 +7,7 @@ import RNProgressHud from 'progress-hud'
 
 import Background from '../common/Background'
 import constants from '../../controller/constants'
-import CommonAPIs from '../../controller/api/CommonAPIs'
+import CommonAPIs from '../../controller/APIs/CommonAPIs'
 
 const validatePhone = (phone) => {
     if (phone.length < 9 || phone.length > 12) {

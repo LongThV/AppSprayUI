@@ -8,13 +8,14 @@ import RNProgressHud from 'progress-hud'
 import Background from '../common/Background'
 import InputStyle from '../common/InputStyle'
 import constants from '../../controller/constants'
-import CommonAPIs from '../../controller/api/CommonAPIs'
+import CommonAPIs from '../../controller/APIs/CommonAPIs'
+import ShowError from '../common/ShowError'
 
 const LoginScreen = () => {
     const navigation = useNavigation()
 
-    const [phone, setPhone] = useState('')
-    const [pass, setPass] = useState('')
+    const [phone, setPhone] = useState('12345678910')
+    const [pass, setPass] = useState('123456')
 
     const handleLoginUser = () => {
         if (phone.length == 0) {

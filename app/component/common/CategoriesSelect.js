@@ -1,29 +1,22 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity } from 'react-native'
+
 import constants from '../../controller/constants'
 
-const CategoriesSpecial = ({ nameCategory, items }) => {
+const CategoriesSelect = ({ name, dataSelect }) => {
     const showItems = ({ item }) => {
         return (
             <TouchableOpacity style={styles.food}>
-                <Image style={styles.icCategory} source={item.img} />
-                {items.nameCategory == 'Recomended Store' ? (
-                    <Image
-                        source={require('../../assets/images/img_backgroundFood.png')}
-                        style={styles.imgBackgroundFood}
-                    />
-                ) : (
-                    <Image
-                        source={require('../../assets/images/img_backgroundFood2.png')}
-                        style={styles.imgBackgroundFood}
-                    />
-                )}
-
+                <Image style={styles.imgFood} source={{ uri: item.avatar }} />
+                <Image
+                    source={require('../../assets/images/img_backgroundFood.png')}
+                    style={styles.imgBackgroundFood}
+                />
                 <View style={styles.tittleFood}>
                     <Text style={styles.textFood}>{item.name}</Text>
                     <View style={styles.star}>
                         <Image source={require('../../assets/images/ic_star.png')} />
-                        <Text style={styles.textFood}>{item.star}</Text>
+                        <Text style={styles.textFood}>{item.rate}</Text>
                     </View>
                 </View>
             </TouchableOpacity>
@@ -33,15 +26,16 @@ const CategoriesSpecial = ({ nameCategory, items }) => {
     return (
         <View style={styles.ContentSpecial}>
             <View style={styles.tittleSpecial}>
-                <Text style={styles.textSpecial}>{nameCategory}</Text>
+                <Text style={styles.textSpecial}>{name}</Text>
                 <TouchableOpacity>
                     <Text style={styles.textSeeAllSpecial}>See all</Text>
                 </TouchableOpacity>
             </View>
+
             <FlatList
-                data={items}
+                data={dataSelect}
                 renderItem={showItems}
-                keyExtractor={(item) => item.name.toString()}
+                keyExtractor={(item) => item.id}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
             />
@@ -58,7 +52,8 @@ const styles = StyleSheet.create({
     },
     ContentSpecial: {
         marginTop: 26,
-        marginHorizontal: 18
+        marginHorizontal: 18,
+        flex: 1
     },
     food: {
         marginRight: 17
@@ -93,7 +88,12 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         borderRadius: 15
+    },
+    imgFood: {
+        width: 175,
+        height: 175,
+        borderRadius: 15
     }
 })
 
-export default CategoriesSpecial
+export default CategoriesSelect

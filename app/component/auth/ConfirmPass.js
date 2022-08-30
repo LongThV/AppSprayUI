@@ -8,7 +8,7 @@ import RNProgressHud from 'progress-hud'
 import Background from '../common/Background'
 import InputStyle from '../common/InputStyle'
 import constants from '../../controller/constants'
-import CommonAPIs from '../../controller/api/CommonAPIs'
+import CommonAPIs from '../../controller/APIs/CommonAPIs'
 import ShowError from '../common/ShowError'
 
 const ConfirmPassScreen = () => {

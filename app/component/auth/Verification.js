@@ -1,13 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import {
-    View,
-    Text,
-    TouchableOpacity,
-    Image,
-    ScrollView,
-    TextInput,
-    StyleSheet
-} from 'react-native'
+import { View, Text, TouchableOpacity, Image, TextInput, StyleSheet } from 'react-native'
 
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
@@ -15,7 +7,7 @@ import RNProgressHud from 'progress-hud'
 
 import Background from '../common/Background'
 import constants from '../../controller/constants'
-import CommonAPIs from '../../controller/api/CommonAPIs'
+import CommonAPIs from '../../controller/APIs/CommonAPIs'
 
 const VerificationScreen = () => {
     const navigation = useNavigation()

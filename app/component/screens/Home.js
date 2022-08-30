@@ -5,53 +5,6 @@ import Background from '../common/Background'
 import Header from '../common/Header'
 import constants from '../../controller/constants'
 import Categories from '../common/Categories'
-import CategoriesSpecial from '../common/CategoriesSpecial'
-
-const foodRecomended = [
-    {
-        name: 'T-JAY SUSHI',
-        img: require('../../assets/images/img_sushi.png'),
-        star: '4.0'
-    },
-    {
-        name: 'T-JAY CAFE',
-        img: require('../../assets/images/img_cafe.png'),
-        star: '3.0'
-    },
-    {
-        name: 'T-JAY SUSHI 2',
-        img: require('../../assets/images/img_sushi.png'),
-        star: '4.0'
-    },
-    {
-        name: 'T-JAY SUSHI 3',
-        img: require('../../assets/images/img_sushi.png'),
-        star: '4.0'
-    }
-]
-
-const foodRestaurant = [
-    {
-        name: 'T-JAY SUSHI',
-        img: require('../../assets/images/img_sushi2.png'),
-        star: '4.0'
-    },
-    {
-        name: 'T-JAY CAFE',
-        img: require('../../assets/images/img_sushi3.png'),
-        star: '2.0'
-    },
-    {
-        name: 'T-JAY SUSHI 2',
-        img: require('../../assets/images/img_sushi2.png'),
-        star: '4.0'
-    },
-    {
-        name: 'T-JAY SUSHI 3',
-        img: require('../../assets/images/img_sushi2.png'),
-        star: '4.0'
-    }
-]
 
 const HomeScreen = () => {
     return (
@@ -72,11 +25,9 @@ const HomeScreen = () => {
                     <Text style={styles.textPayment}>Receive</Text>
                 </TouchableOpacity>
             </View>
+
             <ScrollView>
                 <Categories />
-                <CategoriesSpecial nameCategory={'Recomended Store'} items={foodRecomended} />
-                <CategoriesSpecial nameCategory={'Restaurant'} items={foodRestaurant} />
-                <CategoriesSpecial nameCategory={'Restaurant'} items={foodRestaurant} />
             </ScrollView>
         </View>
     )
